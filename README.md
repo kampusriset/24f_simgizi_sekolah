@@ -150,6 +150,7 @@ Tabel Relasi:
 CREATE DATABASE sim_gizi;
 USE sim_gizi;
 
+--Tabel sekolah
 CREATE TABLE sekolah (
     id_sekolah INT AUTO_INCREMENT PRIMARY KEY,
     nama_sekolah VARCHAR(150) NOT NULL,
@@ -157,6 +158,7 @@ CREATE TABLE sekolah (
     jenjang VARCHAR(20)
 );
 
+--Tabel penerima manfaat
 CREATE TABLE penerima_manfaat (
     id_penerima INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100) NOT NULL,
@@ -167,6 +169,7 @@ CREATE TABLE penerima_manfaat (
     CONSTRAINT fk_penerima_sekolah FOREIGN KEY (id_sekolah) REFERENCES sekolah (id_sekolah) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
+--Tabel menu makanan
 CREATE TABLE menu_makanan (
     id_menu INT AUTO_INCREMENT PRIMARY KEY,
     nama_menu VARCHAR(100) NOT NULL,
@@ -174,6 +177,7 @@ CREATE TABLE menu_makanan (
     tanggal_menu DATE
 );
 
+--Tabel kandungan gizi
 CREATE TABLE kandungan_gizi (
     id_gizi INT AUTO_INCREMENT PRIMARY KEY,
     id_menu INT,
@@ -184,6 +188,7 @@ CREATE TABLE kandungan_gizi (
     CONSTRAINT fk_gizi_menu FOREIGN KEY (id_menu) REFERENCES menu_makanan (id_menu) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+--Tabel mitra
 CREATE TABLE mitra (
     id_mitra INT AUTO_INCREMENT PRIMARY KEY,
     nama_mitra VARCHAR(100),
@@ -192,6 +197,7 @@ CREATE TABLE mitra (
     status_verifikasi ENUM('Pending', 'Terverifikasi', 'Ditolak')
 );
 
+--Tabel dapur
 CREATE TABLE dapur (
     id_dapur INT AUTO_INCREMENT PRIMARY KEY,
     nama_dapur VARCHAR(100),
@@ -202,6 +208,7 @@ CREATE TABLE dapur (
     CONSTRAINT fk_dapur_mitra FOREIGN KEY (id_mitra) REFERENCES mitra (id_mitra) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
+--Tabel distribusi
 CREATE TABLE distribusi (
     id_distribusi INT AUTO_INCREMENT PRIMARY KEY,
     tanggal DATE,
@@ -212,6 +219,7 @@ CREATE TABLE distribusi (
     CONSTRAINT fk_distribusi_dapur FOREIGN KEY (id_dapur) REFERENCES dapur (id_dapur) ON UPDATE CASCADE ON DELETE SET NULL
 );
 
+--Tabel distribusi detail
 CREATE TABLE distribusi_detail (
     id_detail INT AUTO_INCREMENT PRIMARY KEY,
     id_distribusi INT,
@@ -221,6 +229,7 @@ CREATE TABLE distribusi_detail (
     CONSTRAINT fk_detail_menu FOREIGN KEY (id_menu) REFERENCES menu_makanan (id_menu) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+--Tabel absensi
 CREATE TABLE absensi (
     id_absensi INT AUTO_INCREMENT PRIMARY KEY,
     id_penerima INT,
@@ -229,6 +238,7 @@ CREATE TABLE absensi (
     CONSTRAINT fk_absensi_penerima FOREIGN KEY (id_penerima) REFERENCES penerima_manfaat (id_penerima) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+--Tabel keluhan
 CREATE TABLE keluhan (
     id_keluhan INT AUTO_INCREMENT PRIMARY KEY,
     id_penerima INT,
@@ -238,6 +248,7 @@ CREATE TABLE keluhan (
     CONSTRAINT fk_keluhan_penerima FOREIGN KEY (id_penerima) REFERENCES penerima_manfaat (id_penerima) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+--Tabel petugas
 CREATE TABLE petugas (
     id_petugas INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100),
@@ -246,6 +257,7 @@ CREATE TABLE petugas (
     jabatan VARCHAR(50)
 );
 
+--Tabel penilaian makanan
 CREATE TABLE penilaian_makanan (
     id_penilaian INT AUTO_INCREMENT PRIMARY KEY,
     id_menu INT,
@@ -254,6 +266,7 @@ CREATE TABLE penilaian_makanan (
     CONSTRAINT fk_penilaian_menu FOREIGN KEY (id_menu) REFERENCES menu_makanan (id_menu) ON UPDATE CASCADE ON DELETE CASCADE
 );
 
+--Tabel users
 CREATE TABLE users (
     id_user INT AUTO_INCREMENT PRIMARY KEY,
     nama VARCHAR(100),
