@@ -101,16 +101,48 @@ Database: `sim_gizi`
 | `petugas` | Data petugas lapangan per wilayah |
 | `penilaian_makanan` | Penilaian dan komentar pengguna terhadap menu |
 
-### Relasi Utama
+### Relasi Database
 
 ```
-sekolah ──< penerima_manfaat
-sekolah ──< distribusi
-mitra ──< dapur ──< distribusi
-distribusi ──< distribusi_detail >── menu_makanan ──< kandungan_gizi
-distribusi_detail >── menu_makanan ──< penilaian_makanan
-penerima_manfaat ──< absensi
-penerima_manfaat ──< keluhan
+Struktur Pohon Relasi:
+
+
+sekolah
+│
+├── penerima_manfaat
+│   ├── absensi
+│   └── keluhan
+│
+└── distribusi
+    └── distribusi_detail
+        └── menu_makanan
+            ├── kandungan_gizi
+            └── penilaian_makanan
+
+
+mitra
+│
+└── dapur
+    │
+    └── distribusi
+
+
+Tabel Relasi:
++----------------------+--------------------+------------------+
+| Tabel Asal           | Tabel Tujuan       | Kardinalitas     |
++----------------------+--------------------+------------------+
+| sekolah              | penerima_manfaat   | One to Many      |
+| sekolah              | distribusi         | One to Many      |
+| menu_makanan         | kandungan_gizi     | One to One/Many  |
+| menu_makanan         | distribusi_detail  | One to Many      |
+| menu_makanan         | penilaian_makanan  | One to Many      |
+| distribusi           | distribusi_detail  | One to Many      |
+| mitra                | dapur              | One to Many      |
+| dapur                | distribusi         | One to Many      |
+| penerima_manfaat     | absensi            | One to Many      |
+| penerima_manfaat     | keluhan            | One to Many      |
++----------------------+--------------------+------------------+
+
 ```
 
 ### DDL Lengkap
