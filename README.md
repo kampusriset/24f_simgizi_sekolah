@@ -20,8 +20,6 @@ Dengan adanya SIM Gizi, proses pengelolaan data menjadi lebih efektif, efisien, 
 
 ## ✨ Fitur Aplikasi
 
-Fitur Aplikasi
-
 1. Login pengguna
 2. Registrasi akun
 3. Logout sistem
