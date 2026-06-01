@@ -389,3 +389,9 @@ INSERT INTO users (nama, username, password, role) VALUES
 - **Server:** Apache (XAMPP/Laragon)
 
 ---
+
+## 👥 Anggota kelompok
+
+- **Andreas Hannik Junianto**       (2413010662)
+- **Ryan Kurnia C**                 (2413010667)
+- **Nabila Putri A**                (2413010687)
