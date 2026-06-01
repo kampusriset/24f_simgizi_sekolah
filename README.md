@@ -235,13 +235,13 @@ CREATE TABLE users (
 > Tambahkan screenshot aplikasi di sini setelah aplikasi berjalan.
 
 **Halaman Login**
-![Login](assets/tampilan login.png)
+![Login](assets/tampilan-login.png)
 
 **Dashboard**
-![Dashboard](assets/tampilan dashboard.png)
+![Dashboard](assets/tampilan-dashboard.png)
 
 **Data Sekolah**
-![Data Sekolah](assets/tampilan data sekolah.png)
+![Data Sekolah](assets/tampilan-data-sekolah.png)
 
 ---
 
