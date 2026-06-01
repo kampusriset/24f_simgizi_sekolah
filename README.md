@@ -261,9 +261,3 @@ CREATE TABLE users (
 - **Server:** Apache (XAMPP/Laragon)
 
 ---
-
-## 👤 Akun Default
-
-| Username | Password | Role |
-|---|---|---|
-| admin | admin123 | admin |
