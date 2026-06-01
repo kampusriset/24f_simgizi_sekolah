@@ -144,7 +144,7 @@ Tabel Relasi:
 +----------------------+--------------------+------------------+
 ```
 
-### DDL Lengkap
+### Pembuatan Tabel (DDL)
 
 ```sql
 CREATE DATABASE sim_gizi;
@@ -264,6 +264,92 @@ CREATE TABLE users (
 );
 ```
 
+
+## Pengisian Tabel (DML)
+
+```sql
+INSERT INTO sekolah (nama_sekolah, alamat, jenjang) VALUES
+('SD Negeri 1 Yogyakarta', 'Jl. Malioboro No.1',  'SD'),
+('SD Negeri 2 Yogyakarta', 'Jl. Kaliurang No.12', 'SD'),
+('SMP Negeri 1 Sleman',    'Jl. Magelang Km 5',   'SMP'),
+('SMP Negeri 3 Bantul',    'Jl. Parangtritis',     'SMP'),
+('SMA Negeri 1 Depok',     'Jl. Seturan Raya',     'SMA');
+
+INSERT INTO mitra (nama_mitra, jenis, alamat, status_verifikasi) VALUES
+('PT Gizi Nusantara', 'Supplier',    'Yogyakarta', 'Terverifikasi'),
+('CV Boga Sehat',     'Katering',    'Sleman',     'Pending'),
+('UD Pangan Anak',    'Distributor', 'Bantul',     'Terverifikasi');
+
+INSERT INTO dapur (nama_dapur, alamat, penanggung_jawab, kontak, id_mitra) VALUES
+('Dapur MBG Utara',   'Jl. Kaliurang', 'Budi Santoso', '081234567890', 1),
+('Dapur MBG Selatan', 'Jl. Bantul',    'Siti Aminah',  '081234567891', 2),
+('Dapur MBG Timur',   'Jl. Solo',      'Rudi Hartono', '081234567892', 3);
+
+INSERT INTO menu_makanan (nama_menu, jenis, tanggal_menu) VALUES
+('Nasi Ayam Teriyaki', 'Siang',   '2026-05-11'),
+('Bubur Kacang Hijau', 'Sarapan', '2026-05-11'),
+('Nasi Telur Balado',  'Siang',   '2026-05-12'),
+('Roti Susu',          'Sarapan', '2026-05-12'),
+('Nasi Ikan Crispy',   'Siang',   '2026-05-13');
+
+
+INSERT INTO kandungan_gizi (id_menu, kalori, protein, lemak, karbohidrat) VALUES
+(1, 450, 25, 12, 55),
+(2, 250,  8,  5, 40),
+(3, 430, 20, 10, 58),
+(4, 200,  6,  4, 35),
+(5, 470, 28, 15, 50);
+
+INSERT INTO penerima_manfaat (nama, nik, id_sekolah, alamat, status) VALUES
+('Andi Saputra',   '3401010001', 1, 'Malioboro', 'Aktif'),
+('Budi Prasetyo',  '3401010002', 1, 'Kotagede',  'Aktif'),
+('Citra Lestari',  '3401010003', 2, 'Sleman',    'Aktif'),
+('Dewi Anggraini', '3401010004', 3, 'Bantul',    'Aktif'),
+('Eko Nugroho',    '3401010005', 4, 'Depok',     'Nonaktif');
+
+INSERT INTO distribusi (tanggal, id_sekolah, id_dapur, jumlah_porsi) VALUES
+('2026-05-11', 1, 1, 120),
+('2026-05-11', 2, 1,  90),
+('2026-05-12', 3, 2, 150),
+('2026-05-12', 4, 3, 110);
+
+INSERT INTO distribusi_detail (id_distribusi, id_menu, qty) VALUES
+(1, 1, 120),
+(1, 2, 120),
+(2, 1,  90),
+(3, 3, 150),
+(4, 5, 110);
+
+INSERT INTO absensi (id_penerima, tanggal, status_hadir) VALUES
+(1, '2026-05-11', 'Hadir'),
+(2, '2026-05-11', 'Hadir'),
+(3, '2026-05-11', 'Tidak Hadir'),
+(4, '2026-05-12', 'Hadir'),
+(5, '2026-05-12', 'Tidak Hadir');
+
+INSERT INTO keluhan (id_penerima, isi_keluhan, tanggal, status_keluhan) VALUES
+(1, 'Makanan terlalu pedas',    '2026-05-11', 'Masuk'),
+(2, 'Porsi kurang banyak',      '2026-05-11', 'Diproses'),
+(3, 'Makanan datang terlambat', '2026-05-12', 'Selesai');
+
+INSERT INTO petugas (nama, wilayah, nomor_hp, jabatan) VALUES
+('Rahmat Hidayat', 'Sleman', '081111111111', 'Koordinator'),
+('Dina Puspita',   'Bantul', '082222222222', 'Petugas Lapangan'),
+('Agus Salim',     'Depok',  '083333333333', 'Supervisor');
+
+INSERT INTO penilaian_makanan (id_menu, nilai, komentar) VALUES
+(1, 5, 'Sangat enak'),
+(2, 4, 'Cukup baik'),
+(3, 3, 'Agak asin'),
+(5, 5, 'Anak-anak suka');
+
+-- 13. users
+INSERT INTO users (nama, username, password, role) VALUES
+('Administrator',    'admin',    'admin123', 'admin'),
+('Petugas Sleman',   'petugas1', '123456',   'petugas'),
+('Operator Dapur',   'dapur1',   '123456',   'dapur'),
+('Operator Sekolah', 'sekolah1', '123456',   'sekolah');
+```
 ---
 
 ## 📸 Screenshot Tampilan Aplikasi
