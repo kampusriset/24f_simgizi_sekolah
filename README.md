@@ -292,7 +292,6 @@ INSERT INTO menu_makanan (nama_menu, jenis, tanggal_menu) VALUES
 ('Roti Susu',          'Sarapan', '2026-05-12'),
 ('Nasi Ikan Crispy',   'Siang',   '2026-05-13');
 
-
 INSERT INTO kandungan_gizi (id_menu, kalori, protein, lemak, karbohidrat) VALUES
 (1, 450, 25, 12, 55),
 (2, 250,  8,  5, 40),
@@ -343,7 +342,6 @@ INSERT INTO penilaian_makanan (id_menu, nilai, komentar) VALUES
 (3, 3, 'Agak asin'),
 (5, 5, 'Anak-anak suka');
 
--- 13. users
 INSERT INTO users (nama, username, password, role) VALUES
 ('Administrator',    'admin',    'admin123', 'admin'),
 ('Petugas Sleman',   'petugas1', '123456',   'petugas'),
