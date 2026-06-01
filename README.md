@@ -6,25 +6,32 @@ Sistem Informasi Manajemen Gizi Sekolah berbasis web yang dibangun menggunakan P
 
 ## 📋 Deskripsi Aplikasi
 
-SIM Gizi adalah platform manajemen terpadu untuk program gizi sekolah yang mencakup pengelolaan data sekolah, penerima manfaat, menu makanan, dapur mitra, distribusi porsi, hingga pencatatan absensi dan keluhan. Sistem ini mendukung multi-role pengguna sehingga setiap aktor (admin, petugas, dapur, sekolah) memiliki akses yang sesuai dengan tanggung jawabnya.
+SIM Gizi (Sistem Informasi Gizi) merupakan aplikasi berbasis web yang dirancang untuk membantu proses pengelolaan dan pendataan informasi yang berkaitan dengan program gizi secara lebih terstruktur, cepat, dan efisien. Aplikasi ini dikembangkan sebagai sarana digital untuk menggantikan proses pencatatan manual yang sering menimbulkan berbagai permasalahan, seperti kesalahan pencatatan, duplikasi data, serta kesulitan dalam pencarian dan pengelolaan informasi.
+
+Melalui sistem ini, pengguna dapat melakukan pengelolaan data sekolah yang menjadi bagian dari program gizi, mulai dari proses penambahan data, pengubahan data, penghapusan data, hingga pencarian data berdasarkan kebutuhan. Seluruh informasi tersimpan dalam database sehingga data dapat diakses kembali dengan mudah kapan saja tanpa harus melakukan pencarian secara manual pada dokumen fisik.
+
+SIM Gizi juga dilengkapi dengan fitur autentikasi pengguna yang memungkinkan hanya pengguna yang memiliki akun dan hak akses tertentu yang dapat masuk ke dalam sistem. Dengan adanya mekanisme login dan manajemen sesi pengguna, keamanan data menjadi lebih terjamin serta mengurangi risiko akses oleh pihak yang tidak berwenang.
+
+Aplikasi ini dibangun menggunakan bahasa pemrograman PHP dengan dukungan database MySQL sebagai media penyimpanan data. Antarmuka yang sederhana dan mudah digunakan memungkinkan pengguna untuk mengoperasikan sistem tanpa memerlukan pelatihan khusus. Selain itu, sistem dirancang agar dapat dijalankan pada lingkungan web server lokal seperti XAMPP maupun Laragon sehingga memudahkan proses implementasi dan pengembangan.
+
+Dengan adanya SIM Gizi, proses pengelolaan data menjadi lebih efektif, efisien, dan terorganisir. Sistem ini diharapkan dapat membantu pengguna dalam melakukan pendataan, monitoring, serta pengelolaan informasi secara digital sehingga mendukung peningkatan kualitas administrasi dan pengambilan keputusan yang lebih tepat berdasarkan data yang tersedia.
 
 ---
 
 ## ✨ Fitur Aplikasi
 
-- **Manajemen Sekolah** — Kelola data sekolah terdaftar beserta jenjangnya
-- **Data Penerima Manfaat** — Pendataan siswa/penerima program gizi per sekolah
-- **Menu Makanan** — Penjadwalan menu sarapan dan makan siang beserta tanggal saji
-- **Kandungan Gizi** — Pencatatan kalori, protein, lemak, dan karbohidrat per menu
-- **Manajemen Mitra** — Pengelolaan mitra penyedia makanan dengan status verifikasi
-- **Manajemen Dapur** — Data dapur produksi yang terhubung ke mitra
-- **Distribusi** — Pencatatan distribusi porsi makanan dari dapur ke sekolah per tanggal
-- **Detail Distribusi** — Rincian menu yang didistribusikan dalam setiap sesi distribusi
-- **Absensi** — Pencatatan kehadiran penerima manfaat saat pengambilan makanan
-- **Keluhan** — Pengelolaan keluhan penerima manfaat dengan status tindak lanjut
-- **Penilaian Makanan** — Sistem penilaian (1–5 bintang) dan komentar untuk setiap menu
-- **Manajemen Petugas** — Data petugas lapangan beserta wilayah dan jabatan
-- **Autentikasi Multi-Role** — Login dengan role: `admin`, `petugas`, `dapur`, `sekolah`
+Fitur Aplikasi
+
+1. Login pengguna
+2. Registrasi akun
+3. Logout sistem
+4. Dashboard utama
+5. Menampilkan data sekolah
+6. Menambah data sekolah
+7. Mengubah data sekolah
+8. Menghapus data sekolah
+9. Pencarian data sekolah
+10. Manajemen pengguna berbasis session
 
 ---
 
