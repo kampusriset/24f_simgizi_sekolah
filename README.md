@@ -237,7 +237,7 @@ CREATE TABLE users (
 
 ## 📸 Screenshot Tampilan Aplikasi
 
-> Tambahkan screenshot aplikasi di sini setelah aplikasi berjalan.
+> screenshot tampilan aplikasi setelah berjalan.
 
 **Halaman Login**
 ![Login](assets/tampilan-login.png)
@@ -247,6 +247,9 @@ CREATE TABLE users (
 
 **Data Sekolah**
 ![Data Sekolah](assets/tampilan-data-sekolah.png)
+
+**Menambah Data Sekolah**
+![Tambah Sekolah](assets/tampilan-untuk-menambah-sekolah.png)
 
 ---
 
