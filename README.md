@@ -142,7 +142,6 @@ Tabel Relasi:
 | penerima_manfaat     | absensi            | One to Many      |
 | penerima_manfaat     | keluhan            | One to Many      |
 +----------------------+--------------------+------------------+
-
 ```
 
 ### DDL Lengkap
